@@ -9,11 +9,11 @@
     <Title>TabSanity</Title>
     <Description>Navigate through tabs-as-spaces as if they were actually tabs.</Description>
     <Company>Jed Mao and Doug Krahmer</Company>
-    <Version>2.0.4.0</Version>
-    <AssemblyVersion>2.0.4.0</AssemblyVersion>
-    <FileVersion>2.0.4.0</FileVersion>
+    <Version>3.0.0.0</Version>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <FileVersion>3.0.0.0</FileVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net481</TargetFramework>
     <IsVsixProject>True</IsVsixProject>
     <VsixOutputPath>$(ProjectDir)bin\$(Configuration)\$(TargetFramework)\</VsixOutputPath>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -27,10 +27,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Editor" Version="15.8.525" />
-    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="15.8.525" />
-    <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="15.9.28307" />
-    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="15.8.209" />
+    <PackageReference Include="MessagePack" Version="2.5.192" />
+    <PackageReference Include="Microsoft.VisualStudio.Editor" Version="17.12.215" />
+    <PackageReference Include="Microsoft.VisualStudio.Language.Intellisense" Version="17.12.215" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="17.12.40392" />
   </ItemGroup>
   
   <Target Name="IncludePackageReferenceDependencies" AfterTargets="GetVsixSourceItems">
@@ -42,6 +42,7 @@
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <Import Project="$(BaseIntermediateOutputPath)*.nuget.g.targets" Condition="'$(MSBuildProjectExtension)' == '.tmp_proj' OR $(MSBuildProjectName.EndsWith('wpftmp'))" />
   <ItemGroup>
-    <PackageReference Update="Microsoft.VSSDK.BuildTools" Version="15.9.3039" />
+    <PackageReference Update="Microsoft.VisualStudio.SDK.EmbedInteropTypes" Version="15.0.36" />
+    <PackageReference Update="Microsoft.VSSDK.BuildTools" Version="17.12.2069" />
   </ItemGroup>
 </Project>
